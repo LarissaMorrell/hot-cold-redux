@@ -39,5 +39,12 @@ export const hotColdReducer = (state=initialState, action) => {
             feedback: feedback
         });
     }
+    if(action.type === actions.NEW_GAME) {
+      return {
+          guesses: [],
+          feedback: 'Make your guess!',
+          correctAnswer: Math.floor(Math.random() * 100) + 1
+      };
+    }
     return state;
 };
